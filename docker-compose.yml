@@ -1,0 +1,9 @@
+version: "3"
+services:
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./semaphore-data:/etc/semaphore
+      - ./playbooks:/home/semaphore/playbooks
