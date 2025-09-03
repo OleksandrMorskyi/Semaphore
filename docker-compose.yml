@@ -7,3 +7,4 @@ services:
     volumes:
       - ./semaphore-data:/etc/semaphore
       - ./playbooks:/home/semaphore/playbooks
+      - ~/.ssh/semaphore_key:/home/semaphore/.ssh/id_rsa
