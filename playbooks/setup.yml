@@ -1,0 +1,11 @@
+
+- name: Test Setup
+  hosts: all
+  become: true
+  tasks:
+    - name: Setup my Servers
+      ansible.builtin.setup:
+      register: system_var 
+
+    - debug:
+        var: system_var
