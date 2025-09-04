@@ -1,1 +1,16 @@
+# Vagrant
 .vagrant/
+
+# Semaphore data
+semaphore-data/
+
+# SSH keys (якщо зберігаєш у репозиторії — краще не треба)
+*.pem
+*.key
+*.pub
+
+# IDE / OS
+.DS_Store
+*.swp
+*.swo
+

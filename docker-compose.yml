@@ -1,10 +1,19 @@
-version: "3"
+version: "3.8"
+
 services:
   semaphore:
     image: semaphoreui/semaphore:latest
+    container_name: semaphore
     ports:
       - "3000:3000"
     volumes:
       - ./semaphore-data:/etc/semaphore
       - ./playbooks:/home/semaphore/playbooks
-      - ~/.ssh/semaphore_key:/home/semaphore/.ssh/id_rsa
+      - ~/.ssh/semaphore_key:/home/semaphore/.ssh/id_rsa:ro
+    environment:
+      - SEMAPHORE_DB_DIALECT=bolt
+      - SEMAPHORE_ADMIN_NAME=admin
+      - SEMAPHORE_ADMIN_EMAIL=admin@example.com
+      - SEMAPHORE_ADMIN_PASSWORD=admin123
+      - SEMAPHORE_ADMIN=admin
+    restart: unless-stopped
